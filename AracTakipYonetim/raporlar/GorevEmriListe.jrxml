@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.14.0.final using JasperReports Library version 6.14.0-2ab0d8625be255bf609c78e1181801213e51db8f  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="GorevEmriListe" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="c3a42065-7490-45c6-b1aa-59ae508c0387">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="aractakip"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT arac_gorev.Id,GorevTarihi,GorevliPersonel,GorevTuru,GidilecekYer,sofor.AdSoyad,plaka.Plaka,CikisSaati,DonusSaati,CikisKm,DonusKm,YapilanKm 
+FROM arac_gorev LEFT JOIN sofor ON arac_gorev.SoforId=sofor.Id LEFT JOIN plaka ON arac_gorev.PlakaId=plaka.Id ORDER BY arac_gorev.Id DESC LIMIT 100]]>
+	</queryString>
+	<field name="GorevTarihi" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="GorevTarihi"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="arac_gorev"/>
+	</field>
+	<field name="GorevliPersonel" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="GorevliPersonel"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="arac_gorev"/>
+	</field>
+	<field name="GorevTuru" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="GorevTuru"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="arac_gorev"/>
+	</field>
+	<field name="GidilecekYer" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="GidilecekYer"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="arac_gorev"/>
+	</field>
+	<field name="AdSoyad" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="AdSoyad"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="sofor"/>
+	</field>
+	<field name="Plaka" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="Plaka"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="plaka"/>
+	</field>
+	<field name="CikisSaati" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="CikisSaati"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="arac_gorev"/>
+	</field>
+	<field name="DonusSaati" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="DonusSaati"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="arac_gorev"/>
+	</field>
+	<field name="CikisKm" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="CikisKm"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="arac_gorev"/>
+	</field>
+	<field name="DonusKm" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="DonusKm"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="arac_gorev"/>
+	</field>
+	<field name="YapilanKm" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="YapilanKm"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="arac_gorev"/>
+	</field>
+	<group name="Group1">
+		<groupExpression><![CDATA[$F{Plaka}]]></groupExpression>
+		<groupHeader>
+			<band height="33">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="100" height="32" forecolor="#666666" backcolor="#E6E6E6" uuid="f793dcc0-4e39-4dfe-ade4-d69e83fdd260"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Plaka]]></text>
+				</staticText>
+				<textField>
+					<reportElement mode="Opaque" x="100" y="0" width="455" height="32" forecolor="#006699" backcolor="#E6E6E6" uuid="d7d8bbb8-1fd2-41d2-b52b-ea4194b6acfd"/>
+					<textElement>
+						<font size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{Plaka}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement x="-20" y="32" width="595" height="1" forecolor="#666666" uuid="3ef9a1d7-3f32-493f-9211-5a91b07fff16"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699" uuid="0e62d4ab-4908-45ac-97a7-d5a180fcfa28"/>
+				<staticText>
+					<reportElement x="20" y="20" width="550" height="20" forecolor="#FFFFFF" uuid="15b71368-8e0b-4482-92e0-b4b45eb3c2c5"/>
+					<textElement textAlignment="Center">
+						<font size="12" isBold="true" pdfEncoding="Cp1254"/>
+					</textElement>
+					<text><![CDATA[Karapürçek Ağız ve Diş Sağlığı Merkezi]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="20" y="36" width="550" height="20" forecolor="#FFFFFF" uuid="d84ac965-bde4-44f5-9298-51bc0941863b"/>
+					<textElement textAlignment="Center">
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Taşıt Görev Emri Listesi]]></text>
+				</staticText>
+				<textField pattern="dd/MM/yyyy">
+					<reportElement x="460" y="60" width="110" height="14" forecolor="#FFFFFF" uuid="ccafc75a-4929-456a-b409-c38c92b938f2"/>
+					<textElement textAlignment="Center">
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement x="-20" y="20" width="595" height="1" forecolor="#666666" uuid="8a6261bf-2eda-4619-8f03-006a291c28e2"/>
+			</line>
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="acf549dd-6c3a-4536-8689-adaa764818da">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1949e25e-478b-4551-91cb-63f9d95624fe"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Görev Tarihi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="55" y="0" width="65" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="813dee82-b17b-4090-a9bd-278dad1a6e59">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e5019a8e-591f-4066-8ab4-0bbd7a732d93"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Görevli Personel]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="120" y="0" width="50" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="b909c00a-e673-4b23-9941-e0976dbcf1ab">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fd5081c2-e4ce-4b04-b2e2-a71ab124bc96"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Görev Türü]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="170" y="0" width="60" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a4467721-adde-4aaf-9215-90f1d10455b3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b161f675-ae92-4bf5-a489-7fd2decf22ff"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gidilen Yer]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="230" y="0" width="60" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="43b31963-67c6-42f7-8c75-df862e3b4c47">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e62a929e-1632-402c-9637-c02270930469"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sürücü]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="290" y="0" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="d86ffd7a-c3ef-4c8f-b0ff-12526c8262f9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b736b230-e6af-48cd-8800-a38ee720510e"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Çıkış Saati]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="345" y="0" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="1e454d50-e533-478c-8d80-8c6ec9c5157f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="281b5639-4074-4e5e-8da3-062252b078e7"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dönüş Saati]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="400" y="0" width="50" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="a1e7d977-4ad5-4dd7-af7e-4803eb4ecf2a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7d74e367-41d7-43c9-8b21-99bc5ff3acf1"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Çıkış Km.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="450" y="0" width="50" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="49905b5f-801f-4f38-99c4-1978fd972420">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bc217fc6-1694-45b4-b3bc-f3942f8ab5e7"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dönüş Km.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement mode="Opaque" x="500" y="0" width="55" height="20" forecolor="#006699" backcolor="#E6E6E6" uuid="cfbcac77-caa9-46e2-85fb-f1362a86b5ab">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d3b64ab2-b48f-4bc6-a58d-be2dd59e0929"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Yapılan Km.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="19" width="555" height="1" uuid="821e1191-019d-426c-90b3-c899b7ea3315"/>
+			</line>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="0" y="0" width="55" height="20" uuid="094d20c7-aecc-4e08-88da-cdb947538a11">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1949e25e-478b-4551-91cb-63f9d95624fe"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GorevTarihi}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="55" y="0" width="65" height="20" uuid="6f634387-49a1-4b71-85bb-58cbbc1e8608">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e5019a8e-591f-4066-8ab4-0bbd7a732d93"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GorevliPersonel}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="115" y="0" width="55" height="20" uuid="c1554a9e-8b60-4065-9da8-353a3e721c10">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fd5081c2-e4ce-4b04-b2e2-a71ab124bc96"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GorevTuru}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="170" y="0" width="67" height="20" uuid="adf8951d-b18f-4c8c-b468-308ea3201a6b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b161f675-ae92-4bf5-a489-7fd2decf22ff"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{GidilecekYer}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="237" y="0" width="68" height="20" uuid="7b641261-a5e0-4eeb-9263-b14dfb341259">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e62a929e-1632-402c-9637-c02270930469"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{AdSoyad}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="305" y="0" width="55" height="20" uuid="0f9d8ec5-44d6-4098-95f7-e6827504cec9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b736b230-e6af-48cd-8800-a38ee720510e"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CikisSaati}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="360" y="0" width="55" height="20" uuid="9b08e48c-f013-467b-9713-e775ce79590e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="281b5639-4074-4e5e-8da3-062252b078e7"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DonusSaati}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="415" y="0" width="45" height="20" uuid="c2053fb5-2331-4c33-88aa-18bd9d9a257a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7d74e367-41d7-43c9-8b21-99bc5ff3acf1"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{CikisKm}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="460" y="0" width="40" height="20" uuid="ef34c179-1242-408e-8c87-9002c713fa9b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bc217fc6-1694-45b4-b3bc-f3942f8ab5e7"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{DonusKm}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement x="500" y="0" width="50" height="20" uuid="b05f718f-30a4-4cad-a5cd-850e0b5ef754">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d3b64ab2-b48f-4bc6-a58d-be2dd59e0929"/>
+				</reportElement>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{YapilanKm}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" uuid="6cee42c1-33f6-4e0a-a8f0-ed3ec9cdfd8e"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" uuid="7ff2a9f1-3307-4994-a7af-7a40bdf093fe"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="0" y="4" width="100" height="13" uuid="196d3894-4a30-4e50-8eeb-e4c83e8db591"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
